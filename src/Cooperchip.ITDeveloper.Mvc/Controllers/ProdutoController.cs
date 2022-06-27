@@ -12,5 +12,10 @@ namespace Cooperchip.ITDeveloper.Mvc.Controllers
         {
             return View();
         }
+       
+        public ActionResult Lista()
+        {
+            return View();
+        }
     }
 }

@@ -56,6 +56,14 @@ namespace Cooperchip.ITDeveloper.Mvc
             app.UseMvc(routes =>
             {
                 routes.MapRoute(
+                  name: "modulos",
+                  template: "Prontuario/{controller=Produto}/{action=Lista}/{id?}");
+
+                routes.MapRoute(
+                  name: "secondary",
+                  template: "{controller=Produto}/{action=Lista}/{id?}");
+
+                routes.MapRoute(
                     name: "default",
                     template: "{controller=Home}/{action=Index}/{id?}");
             });
