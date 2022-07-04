@@ -1,0 +1,49 @@
+﻿
+@model Cooperchip.ITDeveloper.Mvc.ViewModels.CarrinhoViewModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+
+
+<div class="row">
+    <div class="panel panel-heading">
+        <h3>Carrinho de compras</h3>
+    </div>
+    <div class="panel panel-body">
+        <table class="table table-hover">
+            <caption>Produtos no Carrinho</caption>
+            <thead>
+                <tr>
+                    <th>Produto</th>
+                    <th>Valor</th>
+                    <th>Estoque</th>
+                    <th>Validade</th>
+                    <th>Em Estoque</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var prod in Model.Produtos)
+                {
+                    <tr>
+                        <th>@prod.Nome</th>
+                        <th>@prod.Valor</th>
+                        <th>@prod.Estoque</th>
+                        <th>@prod.Validade</th>
+                        <th>@prod.EmEstoque</th>
+                    </tr>
+                }
+            </tbody>
+            <tfoot>
+                <tr>
+                    <th><strong>Total: </strong></th>
+                    <th>@Model.TotalCarrinho</th>
+                </tr>
+            </tfoot>
+        </table>
+    </div>
+    <h3>
+        @Model.Mensagem
+    </h3>
+</div>
